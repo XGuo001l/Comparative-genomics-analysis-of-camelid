@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-#有用的长度分布算法
+
 use warnings;
 $file=<STDIN>;
 open(FILE,$file) or die "cannot open $file:$!";
