@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 use warnings;
-#提取ID相同序列
+
 $file=<STDIN>;
 open(FILE,$file) or die "cannot open $file:$!";
 while($line=<FILE>){
