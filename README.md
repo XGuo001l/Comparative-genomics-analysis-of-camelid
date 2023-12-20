@@ -39,7 +39,7 @@ While most species had their genome annotations available on NCBI, annotations f
 
 
 ### Construction of gene families
-
+OrthoFinder was employed to establish gene families and identify orthologous genes within the scope of investigation encompassing 11 species.
 - ##### Input and Output
 
 | Order              | Input                                                        | Output                                                       |
