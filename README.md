@@ -135,7 +135,7 @@ MutPredIndel was used to predict the probability that a specific indel  gene wou
 
 
 
-### PAML:Detect the positively selected genes with the dN/dS value
+### Detect the PSGs by PAML
 
 PAML was performed after multiple sequence alignment of genes from 11 species and filtered by TCS.
 
@@ -179,7 +179,7 @@ The input sequence needs to contain the position of the substitution amino acid 
 
 
 
-### iMKT:The MK test was used to detect the positively selected genes
+### Detect the PSGs by iMKT
 
 - ##### The processing of input data required by iMKT
 
