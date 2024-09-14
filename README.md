@@ -227,7 +227,7 @@ Inactivating substitutions, such as nonsense substitutions and frameshift substi
 
 ###### 1. Get annotation files in gbff format
 
-1. The gbff format annotation files for each species were derived from NCBI RefSeq. File type is RNA GeneBank format (.gbff). For example, the file for alpaca were from [here](https://www.ncbi.nlm.nih.gov/datasets/api/datasets/v2alpha/genome/download?filename=ncbi_dataset.zip&ncbi_phid=939B02D3F5F6933500004022B47813A9.1.m_2.015)
+1. The gbff format annotation files for each species were derived from NCBI RefSeq. File type is RNA GeneBank format (.gbff). For example, the file for alpaca were from [here](https://www.ncbi.nlm.nih.gov/datasets/genome/?taxon=30538)
 
 2. Species that require gbff file in our research are  *Camelus bactrianus, Camelus dromedarius, Camelus ferus* and *Vicugna pacos*.
 
