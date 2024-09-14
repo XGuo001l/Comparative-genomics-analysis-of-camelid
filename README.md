@@ -99,7 +99,7 @@ PAGAN excels at modeling intricate gap structures and provides more precise infe
 
 2.Run PAGAN in batches :[pagan.sh](https://github.com/XGuo001l/Comparative-genomics-analysis-of-camelid/blob/main/indel/scripts/pagan.sh) #Take the species tree of all 11 species as  input. The output file contains protein sequence alignment, DNA sequence alignment, and some insertion,deletion, and substitution events.
 
-3.delbranchseq.pl](https://github.com/XGuo001l/indel/blob/main/scripts/delbranchseq.pl) #delete the predicted branch sequences .
+3.[delbranchseq.pl](https://github.com/XGuo001l/Comparative-genomics-analysis-of-camelid/blob/main/indel/scripts/delbranchseq.pl) #delete the predicted branch sequences .
 
 
 
