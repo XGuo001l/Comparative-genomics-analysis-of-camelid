@@ -227,7 +227,7 @@ Inactivating substitutions, such as nonsense substitutions and frameshift substi
 
 ###### 1. Get annotation files in gbff format
 
-1. The gbff format annotation files for each species were derived from NCBI RefSeq. File type is RNA GeneBank format (.gbff). For example, the file for alpaca were from https://www.ncbi.nlm.nih.gov/projects/r_gencoll/ftp_service/nph-gc-ftp-service.cgi/?HistoryId=MCID_656d5a01877b3c7628602c7a&QueryKey=14&ReleaseType=RefSeq&FileType=RNA_GB&Flat=true
+1. The gbff format annotation files for each species were derived from NCBI RefSeq. File type is RNA GeneBank format (.gbff). For example, the file for alpaca were from [here](https://www.ncbi.nlm.nih.gov/datasets/api/datasets/v2alpha/genome/download?filename=ncbi_dataset.zip&ncbi_phid=939B02D3F5F6933500004022B47813A9.1.m_2.015)
 
 2. Species that require gbff file in our research are  *Camelus bactrianus, Camelus dromedarius, Camelus ferus* and *Vicugna pacos*.
 
@@ -235,7 +235,7 @@ Inactivating substitutions, such as nonsense substitutions and frameshift substi
 
 ###### 2. Get 'corrected' information in each species from the annotation files 
 
-According to the structure of the gbff file, extract the gene name from the **<u>DEFINITION</u>**, and then check whether the gene is corrected. If so, output the gene name and corrected information:[scripts/step1-extractlowq.pl](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step1-extractlowq.pl). The output file is speciesnamecorr.txt. For example, `testdata/alpacacorr.txt`
+According to the structure of the gbff file, extract the gene name from the **<u>DEFINITION</u>**, and then check whether the gene is corrected. If so, output the gene name and corrected information:`scripts/step1-extractlowq.pl`. The output file is speciesnamecorr.txt. For example, `testdata/alpacacorr.txt`
 
 The genes in the species with corrected information were obtained step by step in the following order, and the output of each script served as the input of the next script (Take alpaca, for example):
 
