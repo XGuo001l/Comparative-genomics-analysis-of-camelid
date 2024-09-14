@@ -117,7 +117,7 @@ PAGAN excels at modeling intricate gap structures and provides more precise infe
 
 - ##### **Score and filter by TCS**
 
-[TCS](www.tcoffee.org/Projects/tcs) is a flexible scoring and filtering tool.
+[TCS](https://tcoffee.org/Projects/tcs/index.html) is a flexible scoring and filtering tool.
 
 tcs.sh #The subsequent sequence of multiple sequence alignment is scored , and the column below a specific score becomes  gaps.
 
