@@ -235,17 +235,18 @@ Inactivating substitutions, such as nonsense substitutions and frameshift substi
 
 ###### 2. Get 'corrected' information in each species from the annotation files 
 
-According to the structure of the gbff file, extract the gene name from the **<u>DEFINITION</u>**, and then check whether the gene is corrected. If so, output the gene name and corrected information:[scripts/step1-extractlowq.pl](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step1-extractlowq.pl). The output file is speciesnamecorr.txt. For example, [testdata/alpacacorr.txt](https://github.com/XGuo001l/Inactivated-gene/blob/main/testdata/alpacacorr.txt)
+According to the structure of the gbff file, extract the gene name from the **<u>DEFINITION</u>**, and then check whether the gene is corrected. If so, output the gene name and corrected information:[scripts/step1-extractlowq.pl](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step1-extractlowq.pl). The output file is speciesnamecorr.txt. For example, `testdata/alpacacorr.txt`
 
 The genes in the species with corrected information were obtained step by step in the following order, and the output of each script served as the input of the next script (Take alpaca, for example):
 
-1.  [scripts/step2-extractcor.pl](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step2-extractcor.pl) → [testdata/alpacacorr2.txt](https://github.com/XGuo001l/Inactivated-gene/blob/main/testdata/alpacacorr2.txt)
-2.  [scripts/step3-matchHOG.pl](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step3-matchHOG.pl) → [testdata/alpacacorr3.txt](https://github.com/XGuo001l/Inactivated-gene/blob/main/testdata/alpacacorr3.txt)
-3.  [scripts/step4-extractgene.pl](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step4-extractgene.pl) → [testdata/alpacacorr4.txt](https://github.com/XGuo001l/Inactivated-gene/blob/main/testdata/alpacacorr4.txt)
-4.  [scripts/step5-extrgenecol1.pl](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step5-extrgenecol1.pl) → [testdata/alpacacorr5.txt](https://github.com/XGuo001l/Inactivated-gene/blob/main/testdata/alpacacorr5.txt)
-5.  [scripts/step6-extrHOG.pl](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step6-extrHOG.pl) → [testdata/alpacacorr6.txt](https://github.com/XGuo001l/Inactivated-gene/blob/main/testdata/alpacacorr6.txt)  `uniq` → [testdata/alpacacorr7.txt](https://github.com/XGuo001l/Inactivated-gene/blob/main/testdata/alpacacorr7.txt)
+1.  `scripts/step2-extractcor.pl` → `testdata/alpacacorr2.txt`
+2.  `scripts/step3-matchHOG.pl` → `testdata/alpacacorr3.txt`
+3.  `scripts/step4-extractgene.pl` → `testdata/alpacacorr4.txt`
+4.  `scripts/step5-extrgenecol1.pl` → `testdata/alpacacorr5.txt`
+5.  `scripts/step6-extrHOG.pl` → `testdata/alpacacorr6.txt`
+6.   `uniq` → `testdata/alpacacorr7.txt`
 
-The corrected genes of the Old World camels were also acquired in this way. The genes obtained from the three Old World camels were intersected and the genes obtained from alpaca were removed. → [testdata/cam-alpc.txt](https://github.com/XGuo001l/Inactivated-gene/blob/main/testdata/cam-alpc.txt).
+The corrected genes of the Old World camels were also acquired in this way. The genes obtained from the three Old World camels were intersected and the genes obtained from alpaca were removed. → `testdata/cam-alpc.txt`.
 
 
 
@@ -253,22 +254,21 @@ The corrected genes of the Old World camels were also acquired in this way. The 
 
 PseudoChecker's prediction of gene inactivation requires the CDS and exon sequences of the reference species and the sequences of the target species containing the genes to be tested.  The steps are as follows:
 
-1. [scripts/step7-extractCDS.pl ](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step7-extractCDS.pl) → alpacaCDS.bed  #Extract  the CDS annotation information of filtered gene.
-2. [scripts/step8-alpccds.pl](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step8-alpccds.pl) → alpcdsrna1.txt #Extract RNAID.
-3. [scripts/step9-extractloci.pl](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step9-extractloci.pl) and  [scripts/step9-producebed.pl](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step9-producebed.pl) → bacdroferalgullvi1.bed  #The annotation information of filtered genes was extracted. In the sample file are the resulting comments for Bactrian camels.
+1. `scripts/step7-extractCDS.pl` → alpacaCDS.bed  #Extract  the CDS annotation information of filtered gene.
+2. `scripts/step8-alpccds.pl` → alpcdsrna1.txt #Extract RNAID.
+3. `scripts/step9-extractloci.pl` and  `scripts/step9-producebed.pl` → bacdroferalgullvi1.bed  #The annotation information of filtered genes was extracted. In the sample file are the resulting comments for Bactrian camels.
 4. `bedtools getfasta -fi Yangtuo_llama_genomic.fna -bed bacdroferalgullvi1.bed -s -fo lgcambac.fa  ` Sequences were obtained by `bedtools getfasta`
-5. [scripts/step10-indexgene.pl](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step10-indexgene.pl) → lgcambacindex.fa #Add a gene name to each sequence.
-6. [scripts/step11-geneallspec.pl](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step11-geneallspec.pl) and [scripts/step11-transuc.pl](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step11-transuc.pl) →  <u>genename</u>.fass #Each gene is generated into a single file containing the gene sequence of each species, and the sequence case was converted.
-7. [scripts/step12-extractexonloci.pl](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step12-extractexonloci.pl) → alpcexon.bed #Extract the exon annotation of alpaca.
-8. [scripts/step13-transexontitle.pl](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step13-transexontitle.pl) #Generate a bed file for each gene and isoform.
-9. [scripts/step14-getalpcfst.sh](https://github.com/XGuo001l/Inactivated-gene/blob/main/scripts/step14-getalpcfst.sh) #Get exon sequences in batches.
+5. `scripts/step10-indexgene.pl` → lgcambacindex.fa #Add a gene name to each sequence.
+6. `scripts/step11-geneallspec.pl` and `scripts/step11-transuc.pl` →  <u>genename</u>.fass #Each gene is generated into a single file containing the gene sequence of each species, and the sequence case was converted.
+7. `scripts/step12-extractexonloci.pl` → alpcexon.bed #Extract the exon annotation of alpaca.
+8. `scripts/step13-transexontitle.pl` #Generate a bed file for each gene and isoform.
+9. `scripts/step14-getalpcfst.sh` #Get exon sequences in batches.
 
 
 
 - ##### Inactivation predictions by PseudoChecker 
 
-Inactivation predictions were made using [PseudoChecker software](http://pseudochecker.
-ciimar.up.pt.) by submission of  target species sequences (all camelidae except alpaca) of each gene and the CDS and exon sequences of the gene in alpaca.
+Inactivation predictions were made using [PseudoChecker software](http://pseudochecker.ciimar.up.pt.) by submission of  target species sequences (all camelidae except alpaca) of each gene and the CDS and exon sequences of the gene in alpaca.
 
 
 
