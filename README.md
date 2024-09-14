@@ -145,7 +145,7 @@ tcs scored each residue, and marked the residues below 5 points as gaps. Note th
 
 `/home/T-COFFEE/bin/t_coffee -infile genename.fas -evaluate -output score_ascii,tcs_residue_lower5, -thread 30 -n_core 30`
 
-[tcstransback.sh](https://github.com/XGuo001l/PAML/blob/main/scripts/tcstransback.sh)
+[tcstransback.sh](https://github.com/XGuo001l/Comparative-genomics-analysis-of-camelid/blob/main/detect%20PSGs%20by%20PAML/scripts/tcstransback.sh)
 
 
 
