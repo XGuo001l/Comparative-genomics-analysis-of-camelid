@@ -59,7 +59,7 @@ When analyzing the hierarchical homologous groups, we can select the files of th
 | separate.pl                | perl      | Calculate and output the number of genes for each HOG in each species. | e`.tsv`file for each node，such as`N0.tsv`                   | `.tsv`file for gene number(office software can then be used to extract the HOG with 1 gene number of each species.) |
 | one-one-orthogroup-gene.pl | perl      | The REFSEQ gene names corresponding to 1:1 orthologous genes were extracted. | `.tsv`file concerning Orthogroup ，such as`N0.tsv`；txt file including 1：1HOG | `.tsv/.csv`file for 1:1 orthologs(REFSEQ)                    |
 | reliable.pl                | perl      | The number of orthogroups that are 1:1, specific and missing is calculated. | output file of separate.pl                                   | 1:1 orthologous genes, number of specific and missing orthogroups per species |
-| Biostring.R                | R         | The sequences of each species in each orthogroup were spliced into a file by orthogroup using biostring software. | sequence file`.fa`  for each species;   A table file containing the gene name (refseq) | Each orthogroup is a fasta file containing the corresponding gene sequence for each species`.fa` |
+| biostring.R                | R         | The sequences of each species in each orthogroup were spliced into a file by orthogroup using biostring software. | sequence file`.fa`  for each species;   A table file containing the gene name (refseq) | Each orthogroup is a fasta file containing the corresponding gene sequence for each species`.fa` |
 
 
 
